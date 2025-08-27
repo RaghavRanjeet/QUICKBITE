@@ -56,6 +56,30 @@ public:
     const vector<MenuItem>& getItems() const{
         return items;
     }
+
+    Order* checkoutNow(User* user, const string& orderType, PaymentStrategy* paymentStrategy) {
+        return checkout(user, orderType, paymentStrategy, new NowOrderFactory());
+    }
+
+    Order* checkoutScheduled(User* user, const string& orderType, PaymentStrategy* paymentStrategy, const string& scheduleTime) {
+        return checkout(user, orderType, paymentStrategy, new ScheduledOrderFactory(scheduleTime));
+    }
+
+    Order* checkout(User* user, const string& orderType, 
+        PaymentStrategy* paymentStrategy, OrderFactory* orderFactory) {
+        if (user->getCart()->isEmpty())
+        return nullptr;
+
+        Cart* userCart = user->getCart();
+        Restaurant* orderedRestaurant = userCart->getRestaurant();
+        vector<MenuItem> itemsOrdered = userCart->getItems();
+        double totalCost = userCart->getTotalCost();
+
+        Order* order = orderFactory->createOrder(user, userCart, orderedRestaurant, itemsOrdered, paymentStrategy, totalCost, orderType);
+        OrderManager::getInstance()->addOrder(order);
+        return order;
+    }
+     
 };
 
 #endif // CART_H

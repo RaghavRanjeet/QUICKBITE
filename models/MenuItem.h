@@ -13,7 +13,7 @@ private:
     int price ;
 
 public:
-    MenuItem(const string& code , const sting& name , int price){
+    MenuItem(const string& code , const string& name , int price){
         this->code = code ;
         this->name = name ;
         this->price = price ;
