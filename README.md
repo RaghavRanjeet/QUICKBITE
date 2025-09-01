@@ -27,11 +27,10 @@ This project demonstrates real-world application of OOP concepts such as **Encap
   - **Singleton Pattern** → `OrderManager` and `RestaurantManager`.  
 
 ---
-
 ## UML Class Diagram  
 The following UML diagram illustrates the architecture and design of **QuickBite**:  
 
-![QuickBite UML]([/UML.png](https://github.com/RaghavRanjeet/QUICKBITE/blob/master/UML.png))  
+![QuickBite UML](https://github.com/RaghavRanjeet/QUICKBITE/blob/master/UML.png)  
 
 ---
 
