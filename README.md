@@ -31,7 +31,7 @@ This project demonstrates real-world application of OOP concepts such as **Encap
 ## UML Class Diagram  
 The following UML diagram illustrates the architecture and design of **QuickBite**:  
 
-![QuickBite UML](/quickbite-uml.png)  
+![QuickBite UML](/quickbite-UML.png)  
 
 ---
 
